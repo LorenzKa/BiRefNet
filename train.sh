@@ -7,7 +7,7 @@ case "${task}" in
     'DIS5K') epochs=500 && val_last=50 && step=5 ;;
     'COD') epochs=150 && val_last=50 && step=5 ;;
     'HRSOD') epochs=150 && val_last=50 && step=5 ;;
-    'custom_dataset') epochs=$((244+50)) && val_last=50 && step=5 ;;
+    'custom_dataset') epochs=$((50)) && val_last=50 && step=5 ;;
     'General-2K') epochs=250 && val_last=30 && step=2 ;;
     'Matting') epochs=150 && val_last=50 && step=5 ;;
 esac
@@ -19,7 +19,7 @@ nproc_per_node=$(echo ${devices%%,} | grep -o "," | wc -l)
 to_be_distributed=`echo ${nproc_per_node} | awk '{if($e > 0) print "True"; else print "False";}'`
 
 echo Training started at $(date)
-resume_weights_path='../BiRefNet-general-epoch_244.pth'
+resume_weights_path='../BiRefNet-DIS-epoch_590.pth'
 if [ ${to_be_distributed} == "True" ]
 then
     # Adapt the nproc_per_node by the number of GPUs. Give 8989 as the default value of master_port.
