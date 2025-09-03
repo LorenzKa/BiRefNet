@@ -7,7 +7,7 @@ case "${task}" in
     'DIS5K') epochs=500 && val_last=50 && step=5 ;;
     'COD') epochs=150 && val_last=50 && step=5 ;;
     'HRSOD') epochs=150 && val_last=50 && step=5 ;;
-    'custom_dataset') epochs=$((590+50)) && val_last=50 && step=5 ;;
+    'custom_dataset') epochs=$((590+20)) && val_last=50 && step=5 ;;
     'General-2K') epochs=250 && val_last=30 && step=2 ;;
     'Matting') epochs=150 && val_last=50 && step=5 ;;
 esac
